@@ -1,6 +1,5 @@
 package com.newsfeed.sanjanagujjar.newsfeed.ui;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -13,15 +12,11 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.newsfeed.sanjanagujjar.newsfeed.R;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsInfo;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsInfo;
 
 public class NewsDetailsFragment extends Fragment {
     private static final String NEWS_URL = "NEWS_URL";
@@ -68,7 +63,6 @@ public class NewsDetailsFragment extends Fragment {
     {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            // TODO Auto-generated method stub
             super.onPageStarted(view, url, favicon);
             progressBar.setVisibility(View.VISIBLE);
             relativeProgress.setVisibility(View.VISIBLE);
@@ -76,7 +70,6 @@ public class NewsDetailsFragment extends Fragment {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            // TODO Auto-generated method stub
             progressBar.setVisibility(View.VISIBLE);
             relativeProgress.setVisibility(View.VISIBLE);
             view.loadUrl(url);
@@ -86,7 +79,6 @@ public class NewsDetailsFragment extends Fragment {
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            // TODO Auto-generated method stub
             super.onPageFinished(view, url);
             relativeProgress.setVisibility(View.GONE);
             progressBar.setVisibility(View.GONE);

@@ -1,6 +1,6 @@
 package com.newsfeed.sanjanagujjar.newsfeed.network;
 
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsListResponse;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsListResponse;
 
 import java.util.Map;
 

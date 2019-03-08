@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.newsfeed.sanjanagujjar.newsfeed.interfaces.NewsClickInterface;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsInfo;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsInfo;
 import com.newsfeed.sanjanagujjar.newsfeed.ui.NewsDetailsFragment;
 import com.newsfeed.sanjanagujjar.newsfeed.ui.NewsFeedFragment;
 

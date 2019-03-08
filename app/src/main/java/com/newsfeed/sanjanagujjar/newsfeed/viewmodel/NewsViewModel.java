@@ -5,10 +5,8 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.newsfeed.sanjanagujjar.newsfeed.MainActivity;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsInfo;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsInfo;
 import com.newsfeed.sanjanagujjar.newsfeed.repository.NewsDataRepo;
 
 import java.util.List;

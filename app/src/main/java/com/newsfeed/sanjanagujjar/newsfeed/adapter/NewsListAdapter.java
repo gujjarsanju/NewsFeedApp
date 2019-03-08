@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.newsfeed.sanjanagujjar.newsfeed.R;
 import com.newsfeed.sanjanagujjar.newsfeed.interfaces.NewsClickInterface;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsInfo;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsInfo;
 
 import java.util.List;
 

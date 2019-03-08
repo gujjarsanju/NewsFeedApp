@@ -1,4 +1,4 @@
-package com.newsfeed.sanjanagujjar.newsfeed.model;
+package com.newsfeed.sanjanagujjar.newsfeed.data;
 
 
 import android.arch.persistence.room.Dao;

@@ -17,8 +17,7 @@ import android.widget.ProgressBar;
 import com.newsfeed.sanjanagujjar.newsfeed.MainActivity;
 import com.newsfeed.sanjanagujjar.newsfeed.R;
 import com.newsfeed.sanjanagujjar.newsfeed.adapter.NewsListAdapter;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsInfo;
-import com.newsfeed.sanjanagujjar.newsfeed.repository.NewsDataRepo;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsInfo;
 import com.newsfeed.sanjanagujjar.newsfeed.viewmodel.NewsViewModel;
 
 import java.util.ArrayList;

@@ -4,11 +4,11 @@ import android.content.Context;
 import android.util.Log;
 
 import com.newsfeed.sanjanagujjar.newsfeed.DaggerApplication;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsDao;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsDatabase;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsInfo;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsListResponse;
-import com.newsfeed.sanjanagujjar.newsfeed.network.NetworkCall;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsDao;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsDatabase;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsInfo;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsListResponse;
+import com.newsfeed.sanjanagujjar.newsfeed.network.NetworkClient;
 import com.newsfeed.sanjanagujjar.newsfeed.network.NetworkInterface;
 import com.newsfeed.sanjanagujjar.newsfeed.viewmodel.NewsViewModel;
 
@@ -31,8 +31,6 @@ import retrofit2.Response;
 public class NewsDataRepo {
     private static String TAG = NewsDataRepo.class.getSimpleName();
     private static final NewsDataRepo sInstance = new NewsDataRepo();
-    @Inject
-    Context context;
     @Inject NewsDatabase db;
 
     public static NewsDataRepo getInstance() {
@@ -48,7 +46,7 @@ public class NewsDataRepo {
         data.put("apiKey", "27362c6d57fa4b20b7a279202def0abf");
         data.put("country", "us");
         NetworkInterface apiService =
-                new NetworkCall().getClient().create(NetworkInterface.class);
+                NetworkClient.getClient().create(NetworkInterface.class);
 
         Call<NewsListResponse> call = apiService.getAllNewsFeed(data);
         call.enqueue(new Callback<NewsListResponse>() {
@@ -72,13 +70,10 @@ public class NewsDataRepo {
 
     private void insetAllNewsFromdb(final NewsViewModel newsViewModel, final List<NewsInfo> newsInfos){
         final NewsDao newsDao = db.newsDao();
-        Completable.fromRunnable(new Runnable() {
-            @Override
-            public void run() {
-                for(int i=0; i < newsInfos.size();i++){
-                    NewsInfo info = newsInfos.get(i);
-                    newsDao.insertAll(info);
-                }
+        Completable.fromRunnable(() -> {
+            for(int i=0; i < newsInfos.size();i++){
+                NewsInfo info = newsInfos.get(i);
+                newsDao.insertAll(info);
             }
         }).subscribeOn(Schedulers.io()).subscribe(new CompletableObserver() {
             @Override

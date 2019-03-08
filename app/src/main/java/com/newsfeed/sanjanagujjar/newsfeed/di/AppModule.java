@@ -2,8 +2,7 @@ package com.newsfeed.sanjanagujjar.newsfeed.di;
 
 import android.content.Context;
 
-import com.newsfeed.sanjanagujjar.newsfeed.DaggerApplication;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsDatabase;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsDatabase;
 
 import javax.inject.Singleton;
 

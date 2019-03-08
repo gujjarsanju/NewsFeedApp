@@ -1,4 +1,4 @@
-package com.newsfeed.sanjanagujjar.newsfeed.model;
+package com.newsfeed.sanjanagujjar.newsfeed.data;
 
 import java.util.List;
 

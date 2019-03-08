@@ -5,9 +5,9 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsDao;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsDatabase;
-import com.newsfeed.sanjanagujjar.newsfeed.model.NewsInfo;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsDao;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsDatabase;
+import com.newsfeed.sanjanagujjar.newsfeed.data.NewsInfo;
 
 import org.junit.After;
 import org.junit.Before;
